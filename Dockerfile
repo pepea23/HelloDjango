@@ -6,5 +6,6 @@ run pip install Django==2.2.2 \
 
 COPY . /app/
 WORKDIR /app/
-run pip install -r requirement.txt
-ENTRYPOINT ["SH","-c", "'cd helloworld && python manage.py migrate && python manage.py runserver 0.0.0.0:8000'"]
+run pip install -r requirements.txt
+
+ENTRYPOINT ["sh","-c", "cd helloworld && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]

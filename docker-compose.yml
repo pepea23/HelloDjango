@@ -1,6 +1,6 @@
-version: "3.7"
+version: "3.3"
 
-service:
+services:
  api:
    image: pekpeaping2/zompong:v1
    ports:
