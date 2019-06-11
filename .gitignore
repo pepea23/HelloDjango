@@ -82,14 +82,8 @@ target/
 *.pyc
 __pycache__/
 local_settings.py
-<<<<<<< HEAD
 .env
 db.sqlite3
 
 VENV/
 .vscode
-=======
-/VENV/
-.env
-db.sqlite3
->>>>>>> master
