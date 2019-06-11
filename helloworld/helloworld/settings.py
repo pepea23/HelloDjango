@@ -35,15 +35,16 @@ DJANGO_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles', ]
+    'django.contrib.staticfiles', 
+]
 
-INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
+INTERNAL_APPS = [
+    'polls',
 ]
 
 THIRD_PARTY_APPS = []
 
-INSTALLED_APPS = DJANGO_APPS + INSTALLED_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + INTERNAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
