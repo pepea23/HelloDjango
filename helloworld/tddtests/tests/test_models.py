@@ -1,7 +1,8 @@
 from django.test import TestCase
-from .models import Sentiments
 from django.db.models import CharField
 from django.db.models import IntegerField
+
+from ..models import Sentiments
 
 
 class SentimentsModelTest(TestCase):
