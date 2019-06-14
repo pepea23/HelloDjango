@@ -13,7 +13,9 @@ class SentimentsModelTest(TestCase):
         goodbad = Sentiments._meta.get_field('goodbad')
         self.assertTrue(isinstance(goodbad, IntegerField))
 
-    def test_create_field(self):
-        sentiments=Sentiments.objects.create(word = "hi", goodbad = 1)
-        self.assertEqual(sentiments.word,'hi')
-        self.assertEqual(sentiments.goodbad,1)
+    def test_create_field_good_words_should_have_word_and_status(self):
+        sentiments_1 = Sentiments.objects.create(word = "hi", goodbad = 1)
+        sentiments_2 = Sentiments.objects.create(word = "shit", goodbad = -1)
+        
+        self.assertEqual([sentiments_1.word, sentiments_1.goodbad],['hi',1])
+        self.assertEqual([sentiments_2.word, sentiments_2.goodbad],['shit',-1])
