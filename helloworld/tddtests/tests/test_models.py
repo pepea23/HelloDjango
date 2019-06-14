@@ -11,12 +11,12 @@ class SentimentsModelTest(TestCase):
         self.assertTrue(isinstance(sentiments, CharField))
 
     def test_should_have_goodbad_field(self):
-        goodbad = Sentiments._meta.get_field('goodbad')
-        self.assertTrue(isinstance(goodbad, IntegerField))
+        is_good_or_is_bad = Sentiments._meta.get_field('goodbad')
+        self.assertTrue(isinstance(is_good_or_is_bad, IntegerField))
 
     def test_create_field_good_words_should_have_word_and_status(self):
-        sentiments_1 = Sentiments.objects.create(word = "hi", goodbad = 1)
-        sentiments_2 = Sentiments.objects.create(word = "shit", goodbad = -1)
+        is_good = Sentiments.objects.create(word = "hi", goodbad = 1)
+        is_bad = Sentiments.objects.create(word = "shit", goodbad = -1)
         
-        self.assertEqual([sentiments_1.word, sentiments_1.goodbad],['hi',1])
-        self.assertEqual([sentiments_2.word, sentiments_2.goodbad],['shit',-1])
+        self.assertEqual([is_good.word, is_good.goodbad], ['hi', 1])
+        self.assertEqual([is_bad.word, is_bad.goodbad], ['shit', -1])
