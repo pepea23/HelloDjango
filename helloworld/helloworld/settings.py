@@ -40,6 +40,8 @@ DJANGO_APPS = [
 
 INTERNAL_APPS = [
     'polls',
+    'stock',
+    'tddtests'
 ]
 
 THIRD_PARTY_APPS = []
