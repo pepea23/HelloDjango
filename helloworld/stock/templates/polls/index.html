@@ -1,0 +1,12 @@
+{% comment %} {% load static %} {% endcomment %}
+{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> {% endcomment %}
+{% if GlassList %}
+    <ul>
+    {% for glass in GlassList %}
+    <li><a href="{% url 'detail' glass.id %}">{{ glass.name_glass }}</a></li>
+        <p>------------------------------------------</p>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Glass are available.</p>
+{% endif %}
