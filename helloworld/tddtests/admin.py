@@ -1,5 +1,10 @@
 from django.contrib import admin
 from .models import Sentiments
 
-admin.site.register(Sentiments)
-# Register your models here.
+
+class SentimentsAdmin(admin.ModelAdmin):
+    list_display = ['word', 'goodbad']
+    list_filter = ['date']
+    search_fields = ['word']
+
+admin.site.register(Sentiments,SentimentsAdmin)
