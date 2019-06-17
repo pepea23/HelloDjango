@@ -12,7 +12,9 @@ from .models import Sentiments
 
 
 class IndexView(generic.TemplateView):
-    template_name = 'words/index.html'
+    template_name = "words/index.html"
+    def get(self, request):
+        return render(request, self.template_name)
 
 class CreateWords(generic.View):
     pass
