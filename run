@@ -1,5 +1,5 @@
 #!/bin/bash 
 git pull
-docker build -t runserver:deploy .
-docker rm -f  deploy
-docker run --name deploy -p 80:8000 -d runserver:deploy
+docker-compose build
+docker-compose down
+docker-compose up
